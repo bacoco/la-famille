@@ -1,0 +1,124 @@
+{
+  "$schema": "./family.schema.json",
+  "version": "1.0.0",
+  "families": [
+    {
+      "name": "openclaw",
+      "path": "families/openclaw",
+      "displayName": "OpenClaw — La Famille Bot",
+      "emoji": "🦊",
+      "agents": 5,
+      "status": "active",
+      "description": "Newsletters quotidiennes, veille tech/gas/juridique, Family Council Protocol"
+    },
+    {
+      "name": "biblio",
+      "path": "families/biblio",
+      "displayName": "Biblio — La Bibliotheque",
+      "emoji": "📚",
+      "agents": 1,
+      "status": "active",
+      "description": "Curation de favoris, resume, recherche NLP, base de connaissances"
+    },
+    {
+      "name": "genesis",
+      "path": "families/genesis",
+      "displayName": "Genesis — La Forge des Familles",
+      "emoji": "🌱",
+      "agents": 3,
+      "status": "active",
+      "port": 3200,
+      "description": "Meta-famille qui cree et deploie de nouvelles familles d'agents"
+    },
+    {
+      "name": "sentinel",
+      "path": "families/sentinel",
+      "displayName": "Sentinel — Veille Concurrentielle",
+      "emoji": "👁️",
+      "agents": 4,
+      "status": "planned",
+      "description": "Veille concurrentielle : veilleur web + veilleur social + analyste + rapporteur"
+    },
+    {
+      "name": "plume",
+      "path": "families/plume",
+      "displayName": "Plume — Content Marketing",
+      "emoji": "🪶",
+      "agents": 4,
+      "status": "planned",
+      "description": "Content marketing : stratege SEO + redacteur + optimiseur + relecteur"
+    },
+    {
+      "name": "sherlock",
+      "path": "families/sherlock",
+      "displayName": "Sherlock — Deep Research",
+      "emoji": "🔍",
+      "agents": 3,
+      "status": "planned",
+      "description": "Recherche approfondie : chercheur + extracteur + synthetiseur"
+    },
+    {
+      "name": "juriste",
+      "path": "families/juriste",
+      "displayName": "Juriste — Veille Reglementaire",
+      "emoji": "⚖️",
+      "agents": 3,
+      "status": "planned",
+      "description": "Veille reglementaire : veilleur + analyste d'impact + rapporteur"
+    },
+    {
+      "name": "portfolio",
+      "path": "families/portfolio",
+      "displayName": "Portfolio — Finance",
+      "emoji": "📈",
+      "agents": 3,
+      "status": "planned",
+      "description": "Analyse financiere : analyste + gestionnaire risques + rapporteur"
+    },
+    {
+      "name": "radar",
+      "path": "families/radar",
+      "displayName": "Radar — Monitoring de Marque",
+      "emoji": "📡",
+      "agents": 4,
+      "status": "planned",
+      "description": "Monitoring de marque : veilleur presse + social + analyste + alerteur"
+    },
+    {
+      "name": "campus",
+      "path": "families/campus",
+      "displayName": "Campus — Recherche Academique",
+      "emoji": "🎓",
+      "agents": 3,
+      "status": "planned",
+      "description": "Recherche academique : bibliographe + lecteur + synthetiseur"
+    },
+    {
+      "name": "social",
+      "path": "families/social",
+      "displayName": "Social — Reseaux Sociaux",
+      "emoji": "📱",
+      "agents": 4,
+      "status": "planned",
+      "description": "Reseaux sociaux : createur + planificateur + community manager + analyste"
+    },
+    {
+      "name": "datalab",
+      "path": "families/datalab",
+      "displayName": "DataLab — Analyse de Donnees",
+      "emoji": "📊",
+      "agents": 3,
+      "status": "planned",
+      "description": "Analyse de donnees : nettoyeur + analyste + visualiseur"
+    },
+    {
+      "name": "scout",
+      "path": "families/scout",
+      "displayName": "Scout — Recrutement",
+      "emoji": "🤝",
+      "agents": 3,
+      "status": "planned",
+      "description": "Recrutement : sourceur + screeneur + communicateur"
+    }
+  ]
+}

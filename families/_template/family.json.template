@@ -1,0 +1,21 @@
+{
+  "name": "{{FAMILY_NAME}}",
+  "displayName": "{{DISPLAY_NAME}}",
+  "emoji": "{{EMOJI}}",
+  "version": "1.0.0",
+  "description": "{{DESCRIPTION}}",
+  "author": "{{AUTHOR}}",
+  "license": "MIT",
+  "agents": [
+    {
+      "name": "{{AGENT_NAME}}",
+      "emoji": "{{EMOJI}}",
+      "model": { "provider": "{{PROVIDER}}", "name": "{{MODEL}}" },
+      "role": "{{ROLE}}"
+    }
+  ],
+  "schedule": {},
+  "capabilities": [],
+  "outputs": [],
+  "dependencies": {}
+}

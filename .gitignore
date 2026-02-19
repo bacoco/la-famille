@@ -1,0 +1,28 @@
+# Build artifacts
+target/
+*.db
+*.db-wal
+*.db-shm
+
+# Node
+node_modules/
+.next/
+.turbo/
+
+# Environment
+.env
+.env.local
+.env.*.local
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Generated
+families/*/identity.aieos.json

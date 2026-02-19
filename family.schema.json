@@ -1,0 +1,83 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "OpenClaw Family Manifest",
+  "description": "Schema for family.json — the manifest file that describes an agent family.",
+  "type": "object",
+  "required": ["name", "displayName", "emoji", "version", "description", "agents"],
+  "properties": {
+    "name": {
+      "type": "string",
+      "pattern": "^[a-z0-9-]+$",
+      "description": "Unique identifier (kebab-case)"
+    },
+    "displayName": {
+      "type": "string",
+      "description": "Human-readable name"
+    },
+    "emoji": {
+      "type": "string",
+      "description": "Family emoji"
+    },
+    "version": {
+      "type": "string",
+      "pattern": "^\\d+\\.\\d+\\.\\d+$",
+      "description": "Semantic version"
+    },
+    "description": {
+      "type": "string",
+      "description": "What this family does"
+    },
+    "status": {
+      "type": "string",
+      "enum": ["active", "planned", "development", "archived"],
+      "description": "Lifecycle status of the family"
+    },
+    "author": {
+      "type": "string"
+    },
+    "license": {
+      "type": "string"
+    },
+    "agents": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["name", "emoji", "role"],
+        "properties": {
+          "name": { "type": "string" },
+          "emoji": { "type": "string" },
+          "model": {
+            "type": "object",
+            "properties": {
+              "provider": { "type": "string" },
+              "name": { "type": "string" }
+            }
+          },
+          "role": { "type": "string" }
+        }
+      }
+    },
+    "schedule": {
+      "type": "object",
+      "additionalProperties": { "type": "string" }
+    },
+    "capabilities": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "outputs": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "dependencies": {
+      "type": "object",
+      "properties": {
+        "npm": { "type": "array", "items": { "type": "string" } },
+        "pip": { "type": "array", "items": { "type": "string" } }
+      }
+    },
+    "infrastructure": {
+      "type": "object"
+    }
+  }
+}

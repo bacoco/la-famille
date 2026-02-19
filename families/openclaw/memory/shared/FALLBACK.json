@@ -1,0 +1,45 @@
+{
+  "description": "Mapping de rôles de secours. Si un bot est HS, le fallback prend le relais en mode dégradé.",
+  "fallbacks": {
+    "henry": {
+      "role": "Breaking News / Veille",
+      "fallback": "maman",
+      "fallback_openrouter": "openrouter/openrouter/pony-alpha",
+      "note": "Maman fait la veille via web_search Brave. Pony Alpha en fallback gratuit."
+    },
+    "sage": {
+      "role": "Analyse / Philosophie",
+      "fallback": "maman",
+      "fallback_openrouter": "deepseek/deepseek-r1-0528:free",
+      "note": "Maman rédige l'analyse. DeepSeek R1 en fallback reasoning."
+    },
+    "nova": {
+      "role": "Tech Deep Dive / Code",
+      "fallback": "maman",
+      "fallback_openrouter": "qwen/qwen3-coder:free",
+      "note": "Maman couvre le tech. Qwen3 Coder 480B en fallback coding."
+    },
+    "blaise": {
+      "role": "Fact-Check / QA",
+      "fallback": "sage",
+      "fallback_openrouter": "openrouter/openrouter/pony-alpha",
+      "note": "Sage fait la vérification. Pony Alpha en fallback QA."
+    },
+    "maman": {
+      "role": "Orchestration / Édito",
+      "fallback": "henry",
+      "fallback_openrouter": "openrouter/openrouter/pony-alpha",
+      "note": "Henry prend le lead. Pony Alpha en fallback universel."
+    }
+  },
+  "honorary_member": {
+    "name": "Pony",
+    "emoji": "🐴",
+    "model": "openrouter/openrouter/pony-alpha",
+    "role": "Membre honoraire — tourne en shadow, évalué par Maman",
+    "status": "probation",
+    "since": "2026-02-08",
+    "review_cadence": "rapport Papa quotidien, rapport enfants tous les 3 jours",
+    "note": "Papa décide de la suite. Maman évalue en continu."
+  }
+}

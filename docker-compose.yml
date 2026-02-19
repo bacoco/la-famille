@@ -1,0 +1,76 @@
+x-zeroclaw: &zc
+  image: la-famille-runtime:latest
+  build:
+    context: .
+    dockerfile: Dockerfile.runtime
+  restart: unless-stopped
+  networks: [famille-net]
+  volumes:
+    - ./context-bus:/app/context-bus
+    - ./families:/app/families:ro
+
+services:
+  gateway:
+    build:
+      context: ./gateway
+    ports: ["3000:3000"]
+    restart: unless-stopped
+    networks: [famille-net]
+    volumes:
+      - ./context-bus:/app/context-bus
+      - ./registry.json:/app/registry.json:ro
+    environment:
+      CONTEXT_DB_PATH: /app/context-bus/openclaw.db
+      RUST_LOG: info
+
+  maman:
+    <<: *zc
+    ports: ["3101:3101"]
+    environment:
+      ANTHROPIC_API_KEY: "${ANTHROPIC_API_KEY}"
+      RUST_LOG: info
+    command: [zeroclaw, gateway, --config, /app/families/openclaw/maman/agent.toml]
+
+  henry:
+    <<: *zc
+    ports: ["3102:3102"]
+    environment:
+      OPENROUTER_API_KEY: "${OPENROUTER_API_KEY}"
+      RUST_LOG: info
+    command: [zeroclaw, gateway, --config, /app/families/openclaw/henry/agent.toml]
+
+  sage:
+    <<: *zc
+    ports: ["3103:3103"]
+    environment:
+      GOOGLE_API_KEY: "${GOOGLE_API_KEY}"
+      RUST_LOG: info
+    command: [zeroclaw, gateway, --config, /app/families/openclaw/sage/agent.toml]
+
+  nova:
+    <<: *zc
+    ports: ["3104:3104"]
+    environment:
+      OPENAI_API_KEY: "${OPENAI_API_KEY}"
+      RUST_LOG: info
+    command: [zeroclaw, gateway, --config, /app/families/openclaw/nova/agent.toml]
+
+  blaise:
+    <<: *zc
+    ports: ["3105:3105"]
+    environment:
+      ANTHROPIC_API_KEY: "${ANTHROPIC_API_KEY}"
+      RUST_LOG: info
+    command: [zeroclaw, gateway, --config, /app/families/openclaw/blaise/agent.toml]
+
+  ui:
+    build:
+      context: ./ui
+    ports: ["3050:3000"]
+    restart: unless-stopped
+    networks: [famille-net]
+    environment:
+      DEFAULT_BACKEND_URL: "http://gateway:3000/v1"
+
+networks:
+  famille-net:

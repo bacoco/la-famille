@@ -1,0 +1,51 @@
+[family]
+name = "openclaw"
+display_name = "OpenClaw"
+emoji = "🦊"
+description = "La famille originale"
+version = "2.0.0"
+
+[family.council]
+protocol = "COUNCIL.md"
+quorum = 3
+timeout_seconds = 90
+
+[[agents]]
+name = "maman"
+role = "orchestrator"
+provider = "anthropic"
+model = "claude-opus-4"
+port = 3101
+emoji = "🦊"
+
+[[agents]]
+name = "henry"
+role = "researcher"
+provider = "openrouter"
+model = "glm-4.7"
+port = 3102
+emoji = "🦉"
+
+[[agents]]
+name = "sage"
+role = "philosopher"
+provider = "google"
+model = "gemini-3-pro"
+port = 3103
+emoji = "🦎"
+
+[[agents]]
+name = "nova"
+role = "engineer"
+provider = "openai"
+model = "gpt-5.3-codex"
+port = 3104
+emoji = "🌟"
+
+[[agents]]
+name = "blaise"
+role = "verifier"
+provider = "anthropic"
+model = "claude-opus-4"
+port = 3105
+emoji = "🧮"

@@ -1,0 +1,41 @@
+{
+  "version": 1,
+  "collections": [
+    {
+      "id": "ai-research",
+      "name": "AI Research",
+      "emoji": "🤖",
+      "description": "Intelligence artificielle, LLM, modeles, architecture"
+    },
+    {
+      "id": "fintech",
+      "name": "Fintech & Finance",
+      "emoji": "💰",
+      "description": "Finance, crypto, regulation financiere"
+    },
+    {
+      "id": "tech",
+      "name": "Tech & Dev",
+      "emoji": "⚙️",
+      "description": "Developpement, infrastructure, outils"
+    },
+    {
+      "id": "regulation",
+      "name": "Regulation & Juridique",
+      "emoji": "⚖️",
+      "description": "Droit, regulation, conformite"
+    },
+    {
+      "id": "philosophy",
+      "name": "Philosophie & Reflexion",
+      "emoji": "🧠",
+      "description": "Pensee, ethique, societe"
+    },
+    {
+      "id": "misc",
+      "name": "Divers",
+      "emoji": "📌",
+      "description": "Tout le reste"
+    }
+  ]
+}

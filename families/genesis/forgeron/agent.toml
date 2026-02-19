@@ -1,0 +1,23 @@
+[identity]
+format = "aieos"
+path = "identity.aieos.json"
+soul_md = "SOUL.md"
+
+[provider]
+name = "google"
+model = "gemini-3-pro"
+api_key_env = "GOOGLE_API_KEY"
+
+[memory]
+backend = "sqlite"
+database = "../../context-bus/genesis.db"
+namespace = "agent:forgeron"
+auto_save = true
+
+[gateway]
+host = "0.0.0.0"
+port = 3203
+
+[[tools.custom]]
+name = "context_query"
+crate = "openclaw-context-bus"
