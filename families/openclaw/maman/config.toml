@@ -1,0 +1,19 @@
+# ZeroClaw native config — maman (orchestrator)
+default_provider = "anthropic"
+default_model = "claude-opus-4-6"
+default_temperature = 0.7
+# api_key loaded via ANTHROPIC_OAUTH_TOKEN or ANTHROPIC_API_KEY env var
+
+[gateway]
+port = 3101
+host = "0.0.0.0"
+require_pairing = false
+allow_public_bind = true
+
+[memory]
+backend = "sqlite"
+auto_save = true
+
+[agent]
+max_tool_iterations = 10
+max_history_messages = 50

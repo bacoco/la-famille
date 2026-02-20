@@ -1,22 +1,20 @@
 use std::sync::Arc;
 use tracing_subscriber::EnvFilter;
 
-mod context_api;
-mod council_api;
 mod family_router;
 mod routes;
 
-/// Shared application state.
+/// Shared application state (Phase 2: registry only, no context bus).
 pub struct AppState {
-    pub context_bus: openclaw_context_bus::ContextBus,
     pub registry: family_router::AgentRegistry,
 }
 
 #[tokio::main]
 async fn main() {
-    // Initialize tracing
     tracing_subscriber::fmt()
-        .with_env_filter(EnvFilter::from_default_env().add_directive("gateway=info".parse().unwrap()))
+        .with_env_filter(
+            EnvFilter::from_default_env().add_directive("gateway=info".parse().unwrap()),
+        )
         .init();
 
     let port: u16 = std::env::var("GATEWAY_PORT")
@@ -24,22 +22,18 @@ async fn main() {
         .and_then(|p| p.parse().ok())
         .unwrap_or(3000);
 
-    let db_path = std::env::var("CONTEXT_DB_PATH")
-        .unwrap_or_else(|_| "./context-bus/openclaw.db".into());
-
-    // Initialize context bus
-    let context_bus = openclaw_context_bus::ContextBus::open(&db_path)
-        .expect("failed to open context bus database");
-
     // Load agent registry
-    let registry_path = std::env::var("REGISTRY_PATH")
-        .unwrap_or_else(|_| "./registry.json".into());
+    let registry_path =
+        std::env::var("REGISTRY_PATH").unwrap_or_else(|_| "./registry.json".into());
     let registry = family_router::AgentRegistry::load_or_default(&registry_path);
 
-    let state = Arc::new(AppState {
-        context_bus,
-        registry,
-    });
+    tracing::info!(
+        "loaded {} agents: {:?}",
+        registry.agents.len(),
+        registry.agents.keys().collect::<Vec<_>>()
+    );
+
+    let state = Arc::new(AppState { registry });
 
     let app = routes::build_router(state);
 

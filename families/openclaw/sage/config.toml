@@ -1,0 +1,19 @@
+# ZeroClaw native config — sage (philosopher)
+# Google Gemini — uses Gemini CLI OAuth cache (~/.gemini/oauth_creds.json)
+default_provider = "gemini"
+default_model = "gemini-2.5-flash"
+default_temperature = 0.3
+
+[gateway]
+port = 3103
+host = "0.0.0.0"
+require_pairing = false
+allow_public_bind = true
+
+[memory]
+backend = "sqlite"
+auto_save = true
+
+[agent]
+max_tool_iterations = 10
+max_history_messages = 50

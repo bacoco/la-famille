@@ -1,16 +1,11 @@
-# Stage 1: Build ZeroClaw + custom crates
-FROM rust:1.84-bookworm AS builder
+# Stage 1: Build ZeroClaw from submodule
+FROM rust:1.85-bookworm AS builder
 
 WORKDIR /build
 
-# Copy workspace files
-COPY Cargo.toml Cargo.lock* ./
-COPY crates/ crates/
-COPY gateway/ gateway/
+# Build ZeroClaw only (Phase 2: no custom crates)
 COPY runtime/ runtime/
-
-# Build release
-RUN cargo build --release
+RUN cd runtime && cargo build --release
 
 # Stage 2: Minimal runtime
 FROM debian:bookworm-slim
@@ -19,17 +14,8 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     ca-certificates libssl3 \
     && rm -rf /var/lib/apt/lists/*
 
+COPY --from=builder /build/runtime/target/release/zeroclaw /usr/local/bin/zeroclaw
+
 WORKDIR /app
 
-# Copy built binaries
-COPY --from=builder /build/target/release/gateway /usr/local/bin/gateway
-# ZeroClaw binary (if built from submodule)
-COPY --from=builder /build/runtime/target/release/zeroclaw /usr/local/bin/zeroclaw 2>/dev/null || true
-
-# Copy family configs and context bus
-COPY families/ /app/families/
-COPY context-bus/ /app/context-bus/
-
-EXPOSE 3000 3101 3102 3103 3104 3105
-
-CMD ["gateway"]
+CMD ["zeroclaw", "gateway"]

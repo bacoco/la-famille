@@ -1,0 +1,26 @@
+{
+  "schema_version": 1,
+  "updated_at": "2026-02-19T00:00:00+00:00",
+  "active_profiles": {
+    "openai-codex": "openai-codex:default"
+  },
+  "profiles": {
+    "openai-codex:default": {
+      "provider": "openai-codex",
+      "profile_name": "default",
+      "kind": "oauth",
+      "account_id": "534bee73-76ab-4879-9198-75e218bb0789",
+      "workspace_id": null,
+      "access_token": "eyJhbGciOiJSUzI1NiIsImtpZCI6IjE5MzQ0ZTY1LWJiYzktNDRkMS1hOWQwLWY5NTdiMDc5YmQwZSIsInR5cCI6IkpXVCJ9.eyJhdWQiOlsiaHR0cHM6Ly9hcGkub3BlbmFpLmNvbS92MSJdLCJjbGllbnRfaWQiOiJhcHBfRU1vYW1FRVo3M2YwQ2tYYVhwN2hyYW5uIiwiZXhwIjoxNzcxOTY1MTU4LCJodHRwczovL2FwaS5vcGVuYWkuY29tL2F1dGgiOnsiY2hhdGdwdF9hY2NvdW50X2lkIjoiNTM0YmVlNzMtNzZhYi00ODc5LTkxOTgtNzVlMjE4YmIwNzg5IiwiY2hhdGdwdF9hY2NvdW50X3VzZXJfaWQiOiJ1c2VyLTl4dEZjckpaT01iMGtic3l1UDdEVnNuSl9fNTM0YmVlNzMtNzZhYi00ODc5LTkxOTgtNzVlMjE4YmIwNzg5IiwiY2hhdGdwdF9jb21wdXRlX3Jlc2lkZW5jeSI6Im5vX2NvbnN0cmFpbnQiLCJjaGF0Z3B0X3BsYW5fdHlwZSI6InBsdXMiLCJjaGF0Z3B0X3VzZXJfaWQiOiJ1c2VyLTl4dEZjckpaT01iMGtic3l1UDdEVnNuSiIsInVzZXJfaWQiOiJ1c2VyLTl4dEZjckpaT01iMGtic3l1UDdEVnNuSiJ9LCJodHRwczovL2FwaS5vcGVuYWkuY29tL21mYSI6eyJyZXF1aXJlZCI6InllcyJ9LCJodHRwczovL2FwaS5vcGVuYWkuY29tL3Byb2ZpbGUiOnsiZW1haWwiOiIyMDI2QGJhY29ubmllci5jb20iLCJlbWFpbF92ZXJpZmllZCI6dHJ1ZX0sImlhdCI6MTc3MTEwMTE1NywiaXNzIjoiaHR0cHM6Ly9hdXRoLm9wZW5haS5jb20iLCJqdGkiOiI0MTYxMjVhZS04YTNkLTQ0OTQtYWQ5My02ZDFhZTkwNzU2NWYiLCJuYmYiOjE3NzExMDExNTcsInB3ZF9hdXRoX3RpbWUiOjE3NzAyMDg2OTk3NjksInNjcCI6WyJvcGVuaWQiLCJwcm9maWxlIiwiZW1haWwiLCJvZmZsaW5lX2FjY2VzcyJdLCJzZXNzaW9uX2lkIjoiYXV0aHNlc3NfTmhQYVhnaktUY29pMzk0eVZ5RkZsbEtUIiwic3ViIjoiYXV0aDB8MnBuUmI3ZlN1MFdXandWa1hjTkw2S3FIIn0.3hfecP9p_VtVkPLPjniArgzJ0QrWYWJS_M8OtfAEWzQvaObudcQCpRx1-1Ia3OYps3LA4StDCeTbB6fy2kxtNx1umHEa88413T-YGERB0v12sD32tIsml4QYJ17RzwxxbLCQJjJldgP1WACipp8Pw9yvxr0eF92BwAdw6YCth4b022L3c91TYnt4LN-1McRXz6MJ9d4SmFKBbKwFqDiXUzrm0AGKaTFCqu5BxJomYWcxTCGvJq7QS5f9fO2otXQQcqarAHmKopD6AHsuatpgClUV6gyNE7VeNOePbSWXYx6ZbyoiFLfKQ-dGiXsNmwLpOGcy7eNxsj39D54uPDLRzat2fQy7zqA5fIPYT4NbsQ54DE7NnNzMjeh94j-xGrmkEkzD_4R_gqeLK3JRCXdLWBpg4q4QCpaDXhrDOnEXbGFpPUU8i5YdfVyY6QvPLZqMCHeayEpM99U6OYwowMPglPPLfpXwkt__B-EOkYRsHYpcIhP85uzCFZZ7SEr7Hm928E5ubkFfaX5N03NoiytvMHqE_fZYbjFHdLNvgfSLBgQl6ZVniTDjatQw0DitGCe2meSn4xm4TXrHTPgZC-yDsE42A5zAIX2RUVhexOh8ihCgmrJXeQZTdkGwmwszn0Rx01Cra0Kz9G2MrqYg9_yLtsf4ZQNUSBBxe-Si1ChYsMM",
+      "refresh_token": "rt_FF5XnR0_sTxtFApWKgLc0w0HWutdA1EDKmETGCW_T2A.hJxi0zkvIWkYxt9JAmQrtmRLOLX2Zv7bz53aus0PnGw",
+      "id_token": null,
+      "token": null,
+      "expires_at": "2026-02-25T09:25:58+00:00",
+      "token_type": "Bearer",
+      "scope": "openid profile email offline_access",
+      "metadata": {},
+      "created_at": "2026-02-05T00:00:00+00:00",
+      "updated_at": "2026-02-15T00:00:00+00:00"
+    }
+  }
+}

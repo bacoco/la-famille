@@ -4,8 +4,6 @@ use axum::Router;
 use tower_http::cors::{Any, CorsLayer};
 use tower_http::trace::TraceLayer;
 
-use crate::context_api;
-use crate::council_api;
 use crate::family_router;
 use crate::AppState;
 
@@ -17,12 +15,11 @@ pub fn build_router(state: Arc<AppState>) -> Router {
         .allow_headers(Any);
 
     Router::new()
-        // Agent routing (OpenAI-compatible /v1/chat/completions)
+        // Agent routing (OpenAI-compatible /v1/chat/completions → ZeroClaw webhook)
         .merge(family_router::routes(state.clone()))
-        // Context bus API
-        .merge(context_api::routes(state.clone()))
-        // Council API
-        .merge(council_api::routes(state.clone()))
+        // Phase 2: context bus and council routes disabled
+        // .merge(context_api::routes(state.clone()))
+        // .merge(council_api::routes(state.clone()))
         // Health check
         .route("/health", axum::routing::get(health))
         .layer(cors)
@@ -34,5 +31,6 @@ async fn health() -> axum::Json<serde_json::Value> {
         "status": "ok",
         "service": "la-famille-gateway",
         "version": env!("CARGO_PKG_VERSION"),
+        "phase": 2,
     }))
 }

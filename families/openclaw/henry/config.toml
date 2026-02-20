@@ -1,0 +1,21 @@
+# ZeroClaw native config — henry (researcher)
+# GLM via Z.AI Anthropic-compatible endpoint (CodeMax account)
+default_provider = "anthropic"
+default_model = "glm-4.7"
+default_temperature = 0.5
+api_url = "https://api.z.ai/api/anthropic"
+# api_key loaded via ANTHROPIC_API_KEY env var
+
+[gateway]
+port = 3102
+host = "0.0.0.0"
+require_pairing = false
+allow_public_bind = true
+
+[memory]
+backend = "sqlite"
+auto_save = true
+
+[agent]
+max_tool_iterations = 10
+max_history_messages = 50
