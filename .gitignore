@@ -26,3 +26,6 @@ Thumbs.db
 
 # Generated
 families/*/identity.aieos.json
+
+# OAuth credentials
+**/.gemini/oauth_creds.json

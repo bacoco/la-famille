@@ -1,7 +1,7 @@
 # ZeroClaw native config — nova (engineer)
 # OpenAI Codex — endpoint: chatgpt.com/backend-api/codex/responses
 default_provider = "openai-codex"
-default_model = "gpt-5-codex"
+default_model = "gpt-5.3-codex"
 default_temperature = 0.7
 # api_key loaded via OPENAI_API_KEY env var (Codex OAuth JWT)
 

@@ -47,9 +47,11 @@ services:
   sage:
     <<: *zc
     ports: ["3103:3103"]
+    volumes:
+      - ./families:/app/families
+      - ./families/openclaw/sage/.gemini:/root/.gemini:ro
     environment:
       ZEROCLAW_WORKSPACE: /app/families/openclaw/sage
-      GEMINI_API_KEY: "${GEMINI_API_KEY}"
       ZEROCLAW_ALLOW_PUBLIC_BIND: "true"
       RUST_LOG: info
 
